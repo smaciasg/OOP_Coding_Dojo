@@ -16,7 +16,7 @@ class Cuenta_Bancaria:
             self.balance_cuenta -= 5
             if self.balance_cuenta < 5:
                 print(f"Sus fondos son menores que el cobro por intento de transacción en su próximo depósito a su cuenta se debitará ${self.balance_cuenta}")
-                return
+                return self
             else:
                 print("La cuenta no posee fondo suficientes para esta transacción. Cobrando una tafrifa de $5")
                 return self
@@ -31,8 +31,7 @@ class Cuenta_Bancaria:
     def generar_interes(self):
         if self.balance_cuenta > 0:
             self.valor_intereses += self.balance_cuenta*self.porcentaje_tasa_interes
-            self.balance_cuenta += self.valor_intereses
-            
+            self.balance_cuenta += self.valor_intereses     
         return self
     
     @classmethod
